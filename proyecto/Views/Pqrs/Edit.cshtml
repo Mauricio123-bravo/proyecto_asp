@@ -1,0 +1,44 @@
+﻿@model Pqrs
+
+@{
+    ViewData["Title"] = "Update Pqrs";
+
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <h1>Update new Pqrs</h1>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Creation_date" class="control-label"></label>
+                        <input asp-for="Creation_date" class="form-control" />
+                        <span asp-validation-for="Creation_date" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Idcategory" class="control-label"></label>
+                        <select asp-for="Idcategory" class="form-control" asp-items="ViewBag.Category"></select>
+                        <span asp-validation-for="Idcategory" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Iduser" class="control-label"></label>
+                        <select asp-for="Iduser" class="form-control" asp-items="ViewBag.User"></select>
+                        <span asp-validation-for="Iduser" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="submit" value="Edit" class="btn btn-outline-success float-end" />
+                        <a class="btn btn-outline-secondary" asp-action="Index">Show all</a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

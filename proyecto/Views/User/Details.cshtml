@@ -1,0 +1,43 @@
+﻿@model User
+
+@{
+    ViewData["Title"] = Model.Fullname;
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <h1> Details for @Model.Fullname</h1>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <div class="form-group text-center">
+                    <label asp-for="Fullname" class="control-label"></label>
+                    <input asp-for="Fullname" class="form-control" readonly />
+                </div>
+                <div class="form-group text-center">
+                    <label asp-for="Email" class="control-label"></label>
+                    <textarea asp-for="Email" class="form-control" readonly></textarea>/>
+                </div>
+                <div class="form-group text-center">
+                    <label asp-for="Address" class="control-label"></label>
+                    <textarea asp-for="Address" class="form-control" readonly></textarea>/>
+                </div>
+                <div class="form-group text-center">
+                    <label asp-for="Phone" class="control-label"></label>
+                    <textarea asp-for="Phone" class="form-control" readonly></textarea>/>
+                </div>
+                <div class="form-group text-center">
+                    <label asp-for="Document" class="control-label"></label>
+                    <textarea asp-for="Document" class="form-control" readonly></textarea>/>
+                </div>
+                <div class="form-group text-center">
+                    <label asp-for="Password" class="control-label"></label>
+                    <textarea asp-for="Password" class="form-control" readonly></textarea>/>
+                </div>
+                <div>
+                    <a class="btn btn-outline-success float-end" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                    <a class="btn btn-outline-secondary" asp-action="Index">Show all</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

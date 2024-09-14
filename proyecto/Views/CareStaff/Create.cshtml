@@ -1,0 +1,43 @@
+﻿@model CareStaff
+@{
+    ViewData["Title"] = "Add a new CareStaff";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <h1>Add new CareStaff</h1>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Iddepartament" class="control-label"></label>
+                        <select asp-for="Iddepartament" class="form-control" asp-items="ViewBag.Departament"></select>
+                        <span asp-validation-for="Iddepartament" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="form-group mt-2">
+                        <input type="submit" value="Create" class="btn btn-outline-success float-end"/>
+                        <a class="btn btn-outline-secondary" asp-action="Index">Show all</a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
