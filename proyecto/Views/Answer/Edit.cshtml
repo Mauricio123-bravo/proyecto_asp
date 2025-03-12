@@ -1,0 +1,37 @@
+﻿@model Answer
+
+@{
+    ViewData["Title"] = "Update Answer";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <h1>Update Answer</h1>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Content" class="control-label"></label>
+                        <input asp-for="Content" class="form-control" />
+                        <span asp-validation-for="Content" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Answer_date" class="control-label"></label>
+                        <input asp-for="Answer_date" class="form-control" />
+                        <span asp-validation-for="Answer_date" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Idpqrs" class="control-label"></label>
+                        <select asp-for="Idpqrs" class="form-control" asp-items="ViewBag.Pqrs"></select>
+                        <span asp-validation-for="Idpqrs" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="submit" value="Edit" class="btn btn-outline-success float-end" />
+                        <a class="btn btn-outline-secondary" asp-action="Index">Show all</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

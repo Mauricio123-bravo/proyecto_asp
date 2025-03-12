@@ -1,0 +1,52 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Add a new User";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <h1>Add new User</h1>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group text-center">
+                        <label asp-for="Fullname" class="control-label"></label>
+                        <input asp-for="Fullname" class="control-control" />
+                        <span asp-validation-for="Fullname" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="control-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Address" class="control-label"></label>
+                        <input asp-for="Address" class="control-control" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Phone" class="control-label"></label>
+                        <textarea asp-for="Phone" class="control-control"></textarea>
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Document" class="control-label"></label>
+                        <textarea asp-for="Document" class="control-control"></textarea>
+                        <span asp-validation-for="Document" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <textarea asp-for="Password" class="control-control"></textarea>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="submit" value="Create" class="btn btn-outline-success float-end"/>
+                        <a class="btn btn-outline-secondary" asp-action="Index">Show all</a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

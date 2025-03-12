@@ -1,0 +1,32 @@
+﻿@model Answer
+
+@{
+    ViewData["Title"] = Model.Pqrs.Code;
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <h1>Details for Anwers to pqrs # @Model.Pqrs.Code</h1>
+        <div class="row">
+            
+            <div class="form-group text-center">
+                <label asp-for="Content" class="control-label"></label>
+                <input asp-for="Content" class="form-control" readonly />
+            </div>
+            <div class="form-group text-center">
+                <label asp-for="Answer_date" class="control-label"></label>
+                <input asp-for="Answer_date" class="form-control" readonly />
+            </div>
+            <div class="form-group text-center">
+                <label asp-for="Pqrs.Code" class="control-label"></label>
+                <input asp-for="Pqrs.Code" class="form-control" readonly />
+            </div>
+
+            <div class="mt-3">
+                <a class="btn btn-outline-success float-end" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                <a class="btn btn-outline-secondary" asp-action="Index" >Show all</a>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Departament>
+
+@{
+    ViewData["Title"] = "List of Departaments";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="~/images/logo.png" alt="Logo" class="logo">
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>List of Departaments:</h2>
+
+        <div class="table-responsive table-container">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a class="btn btn-action btn-edit" asp-action="Edit" asp-route-id="@item.Id">
+                                        <i class="bi bi-pencil-square"></i> Edit
+                                    </a>
+                                    <a class="btn btn-action btn-details" asp-action="Details" asp-route-id="@item.Id">
+                                        <i class="bi bi-info-circle"></i> Details
+                                    </a>
+                                    <form asp-action="Delete" asp-route-id="@item.Id" method="post" class="d-inline" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este Departamento?');">
+                                        <button type="submit" class="btn btn-action btn-delete">
+                                            <i class="bi bi-trash"></i> Delete
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="fixed-bottom">
+        <a class="btn btn-add" asp-action="Create">
+            <i class="bi bi-plus-circle-dotted"></i> Add New Departament
+        </a>
+    </div>
+
+</body>
+</html>
